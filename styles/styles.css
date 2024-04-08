@@ -4,31 +4,130 @@
 }
 .main h1 {
   margin-bottom: 51px;
+  font-size: 24px;
+  letter-spacing: inherit;
 }
 
 .dashboard {
+  box-sizing: border-box;
+  position: relative;
   width: 968px;
   border-radius: 30px;
   background: #fff;
   box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5019607843);
   padding: 30px 40px 40px 38px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 .dashboard .dashboard-title {
   font-weight: 600;
   font-size: 22px;
   margin-bottom: 7px;
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
 }
 .dashboard .members {
   font-weight: 400;
   color: #16c098;
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
 }
-.dashboard svg {
+.dashboard .search {
+  grid-column: 2/span 1;
+  grid-row: 1/span 2;
+  display: flex;
+  align-items: flex-end;
+}
+.dashboard .search .search-form {
+  box-sizing: border-box;
+  display: flex;
+  margin-left: auto;
+  border-radius: 10px;
+  width: 216px;
+  padding: 7px 8px;
+  background-color: #f9fbff;
+}
+.dashboard .search .search-form .search-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  margin-right: 8px;
+}
+.dashboard .search .search-form .search-btn svg {
   width: 24px;
   height: 24px;
   stroke: #7e7e7e;
   fill: none;
 }
+.dashboard .search .search-form .search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+}
+.dashboard .search .search-form .search-input::-ms-clear {
+  display: none;
+}
+.dashboard .search .search-form .search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+.dashboard .search .search-form .search-input::-webkit-search-decoration, .dashboard .search .search-form .search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+.dashboard .members-table {
+  color: #292d32;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.dashboard .members-table thead {
+  color: #b5b7c0;
+  height: 35px;
+}
+.dashboard .members-table thead th {
+  padding: 0;
+  text-align: start;
+}
+.dashboard .members-table tbody td {
+  height: 69px;
+  border-bottom: 1px solid #eee;
+}
+.dashboard .members-table p {
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 4px 12px;
+  width: 80px;
+  text-align: center;
+}
+.dashboard .members-table p.active {
+  margin-left: auto;
+  color: #008767;
+  background-color: rgba(22, 192, 152, 0.38);
+  border: 1px solid #00b087;
+}
+.dashboard .members-table p.inactive {
+  margin-left: auto;
+  color: #df0404;
+  background-color: #ffc5c5;
+  border: 1px solid #df0404;
+}
+.dashboard .border {
+  position: absolute;
+  top: 166px;
+  left: 0;
+  width: 100%;
+  z-index: 6;
+  border-bottom: 1px solid #eee;
+}
 .dashboard .pagination {
+  grid-column: 1/span 2;
+  grid-row: 4/span 1;
   display: flex;
   justify-content: space-between;
 }
@@ -58,43 +157,10 @@
   border: none;
 }
 
-table {
-  color: #292d32;
-  width: 100%;
-  margin-bottom: 30px;
-}
-table thead {
-  color: #b5b7c0;
-  height: 35px;
-}
-table thead th {
-  padding: 0;
-  text-align: start;
-}
-table tbody tr {
-  height: 69px;
-  border-bottom: 1px solid #eee;
-}
-table p {
-  border-radius: 4px;
-  padding: 4px 12px;
-  width: 80px;
-  text-align: center;
-}
-table p.active {
-  color: #008767;
-  background-color: rgba(22, 192, 152, 0.38);
-  border: 1px solid #00b087;
-}
-table p.inactive {
-  color: #df0404;
-  background-color: #ffc5c5;
-  border: 1px solid #df0404;
-}
-
 .sidebar {
+  box-sizing: border-box;
   width: 306px;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5);
@@ -110,13 +176,12 @@ table p.inactive {
 .sidebar ul li {
   display: flex;
   align-items: center;
-  padding: 8px 8px 8px 11px;
+  padding: 11px 8px 11px 11px;
 }
 .sidebar ul li svg {
   width: 24px;
   height: 24px;
-  stroke: #9197b3;
-  fill: none;
+  fill: #9197b3;
 }
 .sidebar ul li p {
   margin-left: 14px;
@@ -127,8 +192,7 @@ table p.inactive {
   border-radius: 8px;
 }
 .sidebar ul li.current svg {
-  stroke: #fff;
-  fill: none;
+  fill: #fff;
 }
 .sidebar ul li .more {
   width: 16px;
@@ -146,7 +210,6 @@ table p.inactive {
 .logo svg {
   width: 37px;
   height: 37px;
-  margin-left: 8px;
   stroke: #000;
 }
 
@@ -159,7 +222,8 @@ table p.inactive {
   font-size: 26px;
   letter-spacing: 0.01em;
   color: #000;
-  margin-left: 4px;
+  margin-right: 4px;
+  margin-left: 8px;
 }
 .logo-title .version {
   font-size: 10px;

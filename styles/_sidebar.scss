@@ -1,8 +1,9 @@
 @import "variables";
 
 .sidebar {
+  box-sizing: border-box;
   width: 306px;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5);
@@ -16,13 +17,12 @@
     li {
       display: flex;
       align-items: center;
-      padding: 8px 8px 8px 11px;
+      padding: 11px 8px 11px 11px;
 
       svg {
         width: 24px;
         height: 24px;
-        stroke: $primary-grey-color;
-        fill: none;
+        fill: $primary-grey-color;
       }
       p {
         margin-left: 14px;
@@ -32,8 +32,7 @@
         color: $white;
         border-radius: 8px;
         svg {
-          stroke: $white;
-          fill: none;
+          fill: $white;
         }
       }
       .more {
@@ -54,7 +53,6 @@
   svg {
     width: 37px;
     height: 37px;
-    margin-left: 8px;
     stroke: #000;
   }
 }
@@ -66,7 +64,8 @@
     font-size: 26px;
     letter-spacing: 0.01em;
     color: #000;
-    margin-left: 4px;
+    margin-right: 4px;
+    margin-left: 8px;
   }
   .version {
     font-size: 10px;

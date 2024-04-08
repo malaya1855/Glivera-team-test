@@ -73,28 +73,12 @@ main
     .dashboard
       h2.dashboard-title All Customers
       p.members Active Members
-      input.search(type="search")
-      +svg('search')
-      //- ul.members-list
-      //-   li.members-list-item 
-      //-     p Customer Name
-      //-     p Company
-      //-     p Phone Number
-      //-     p Email
-      //-     p Country
-      //-     p Status
-      //-   each item in members
-      //-       li.members-list-item
-      //-         p= item.name
-      //-         p= item.company
-      //-         p= item.phone
-      //-         p= item.email
-      //-         p= item.country
-      //-         if (item.active)
-      //-           p Active
-      //-         else
-      //-           p Inactive
-      table
+      .search
+        form.search-form
+          button.search-btn(type="button") 
+            +svg('search')
+          input.search-input(type="search" placeholder="Search") 
+      table.members-table
         thead
           tr
             th Customer Name
@@ -117,6 +101,7 @@ main
               else
                 td
                   p.inactive Inactive
+      .border
       .pagination
         p Showing data 1 to 8 of  256K entries
         ul 
