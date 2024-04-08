@@ -72,9 +72,28 @@ main
     h1.title-hello Hello Evano 👋🏼,
     .dashboard
       h2.dashboard-title All Customers
-      p Active Members
+      p.members Active Members
       input.search(type="search")
       +svg('search')
+      //- ul.members-list
+      //-   li.members-list-item 
+      //-     p Customer Name
+      //-     p Company
+      //-     p Phone Number
+      //-     p Email
+      //-     p Country
+      //-     p Status
+      //-   each item in members
+      //-       li.members-list-item
+      //-         p= item.name
+      //-         p= item.company
+      //-         p= item.phone
+      //-         p= item.email
+      //-         p= item.country
+      //-         if (item.active)
+      //-           p Active
+      //-         else
+      //-           p Inactive
       table
         thead
           tr
@@ -93,17 +112,19 @@ main
               td= item.email
               td= item.country
               if (item.active)
-                td Active
+                td
+                  p.active Active
               else
-                td Inactive
+                td
+                  p.inactive Inactive
       .pagination
         p Showing data 1 to 8 of  256K entries
         ul 
           li &lt;
-          li.active 1
+          li.accent 1
           li 2
           li 3
           li 4
-          li ...
+          li.etc ...
           li 40
           li &gt;

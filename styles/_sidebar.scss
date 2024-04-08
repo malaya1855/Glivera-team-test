@@ -1,14 +1,56 @@
+@import "variables";
+
 .sidebar {
   width: 306px;
-  //   height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5);
-  background: #fff;
+  background: $white;
   padding: 36px 28px 76px 28px;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    color: $primary-grey-color;
+    li {
+      display: flex;
+      align-items: center;
+      padding: 8px 8px 8px 11px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        stroke: $primary-grey-color;
+        fill: none;
+      }
+      p {
+        margin-left: 14px;
+      }
+      &.current {
+        background-color: $accent-purple-color;
+        color: $white;
+        border-radius: 8px;
+        svg {
+          stroke: $white;
+          fill: none;
+        }
+      }
+      .more {
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+      }
+    }
+  }
 }
 
 .logo {
   display: flex;
   align-items: center;
+  margin-bottom: 64px;
   svg {
     width: 37px;
     height: 37px;
@@ -30,5 +72,14 @@
     font-size: 10px;
     letter-spacing: -0.01em;
     color: #838383;
+  }
+}
+.user {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+  align-items: center;
+  .position {
+    color: #757575;
   }
 }

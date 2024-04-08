@@ -43,12 +43,14 @@ aside
                                 p.version v.01
                 ul
                         each item in links 
-                                li
+                                li(class=item.current ? 'current' : '')
                                         +svg(item.name.toLowerCase())
                                         p= item.name
                                         if (item.more)
-                                                +svg('chevron-right')
+                                                .more
+                                                        +svg('chevron-right')
                 .user 
                         img(src="../assets/user.jpg", alt="User")
-                        p.name Evano
-                        p.positin Project Manager
+                        .user-info
+                                p.name Evano
+                                p.position Project Manager
