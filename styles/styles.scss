@@ -1,0 +1,19 @@
+@import "main";
+@import "sidebar";
+
+$green-color: #16c098;
+$text-green-color: #008767;
+$border-green-color: #00b087;
+$purple-color: #5932ea;
+$primary-red-color: #df0404;
+$second-red-color: #ffc5c5;
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background-color: #fafbff;
+}
+.container {
+  display: flex;
+}

@@ -1,3 +1,54 @@
+include mixin
+
+-
+        let links = [
+                {
+                "name": "Dashboard",
+                "current": false, 
+                "more": false
+                },
+                {
+                "name": "Product",
+                "current": false, 
+                "more": true
+                },
+                {
+                "name": "Customers",
+                "current": true, 
+                "more": true
+                },
+                {
+                "name": "Income",
+                "current": false, 
+                "more": true
+                },
+                {
+                "name": "Promote",
+                "current": false, 
+                "more": true
+                },
+                {
+                "name": "Help",
+                "current": false, 
+                "more": true
+                }
+        ]
+
 aside 
-        section 
-                p Asidefff
+        section.sidebar
+                .logo
+                        +svg('logo')
+                        .logo-title
+                                p.logo-name Dashboard
+                                p.version v.01
+                ul
+                        each item in links 
+                                li
+                                        +svg(item.name.toLowerCase())
+                                        p= item.name
+                                        if (item.more)
+                                                +svg('chevron-right')
+                .user 
+                        img(src="../assets/user.jpg", alt="User")
+                        p.name Evano
+                        p.positin Project Manager
