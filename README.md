@@ -16,6 +16,7 @@ Glivera-team-test/
 ├── Compiled-HTML/
 │   ├── main.html
 │   ├── mixin.html
+│   ├── navigation.html
 │   ├── sidebar.html
 │   └── index.html
 │   
@@ -30,6 +31,7 @@ Glivera-team-test/
 ├── index.pug
 ├── main.pug
 ├── sidebar.pug
+├── navigation.pug
 ├── mixin.pug
 │ 
 ├── README.md
