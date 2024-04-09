@@ -34,7 +34,7 @@ include mixin
     }
   ]
   
-ul.navigation-list
+ul
     each item in links 
         li(class=item.current ? 'current' : '')
             +svg(item.name.toLowerCase())

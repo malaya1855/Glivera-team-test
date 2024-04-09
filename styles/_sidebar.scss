@@ -13,6 +13,9 @@
     background: $white;
     padding: 36px 28px 76px 28px;
   }
+  .navigation {
+    @include nav-list;
+  }
 }
 
 .logo {
@@ -41,6 +44,7 @@
     }
   }
 }
+
 .user {
   display: flex;
   gap: 12px;

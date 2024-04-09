@@ -30,18 +30,6 @@
       height: 24px;
       fill: $white;
     }
-    #sidebar-list {
-      width: 200px;
-      padding: 20px;
-      background: $white;
-      position: absolute;
-      top: 46px;
-      z-index: 1;
-      border-radius: 8px;
-      .navigation-list {
-        @include nav-list;
-      }
-    }
     @media screen and (min-width: 767px) {
       display: none;
     }
@@ -195,6 +183,9 @@
       border: 1px solid #eee;
       font-size: 12px;
       font-weight: 400;
+      .item {
+        flex: 1;
+      }
       .member-info {
         color: $secondary-grey-color;
         display: flex;

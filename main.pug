@@ -70,11 +70,9 @@ include mixin
 main
   section.main
     h1.title-hello Hello Evano 👋🏼,
-    .page-title#dashboard-link
+    .page-title
       +svg("chevron-right")
       p Customers
-      .visually-hidden#sidebar-list
-        include navigation
     .dashboard
       h2.dashboard-title All Customers
       p.members Active Members
@@ -109,14 +107,15 @@ main
       ul.members-list 
         each item in members
           li.member-list-item
-            p= item.name
-            .member-info
+            p.item= item.name
+            .item.member-info
               p= item.company+", "
               p= item.country
-            if (item.active)
-              p.active Active
-            else
-              p.inactive Inactive
+            .item 
+              if (item.active)
+                p.active Active
+              else
+                p.inactive Inactive
 
       .border
       .pagination
