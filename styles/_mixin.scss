@@ -1,0 +1,58 @@
+@mixin active {
+  color: $accent-green-color;
+  background-color: $primary-green-color-38;
+  border: 1px solid $secondary-green-color;
+}
+
+@mixin inactive {
+  color: $primary-red-color;
+  background-color: $secondary-red-color;
+  border: 1px solid $primary-red-color;
+}
+
+@mixin paragraph {
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 4px 6px;
+  width: 60px;
+  text-align: center;
+  @media screen and (min-width: 767px) {
+    width: 80px;
+    padding: 4px 12px;
+  }
+}
+
+@mixin nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: $primary-grey-color;
+  li {
+    display: flex;
+    align-items: center;
+    padding: 11px 8px 11px 11px;
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: $primary-grey-color;
+    }
+    p {
+      margin-left: 14px;
+    }
+    &.current {
+      background-color: $accent-purple-color;
+      color: $white;
+      border-radius: 8px;
+      svg {
+        fill: $white;
+      }
+    }
+    .more {
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+  }
+}

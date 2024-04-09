@@ -1,0 +1,44 @@
+include mixin
+
+-
+  let links = [
+    {
+      "name": "Dashboard",
+      "current": false, 
+      "more": false
+    },
+    {
+      "name": "Product",
+      "current": false, 
+      "more": true
+    },
+    {
+      "name": "Customers",
+      "current": true, 
+      "more": true
+    },
+    {
+      "name": "Income",
+      "current": false, 
+      "more": true
+    },
+    {
+      "name": "Promote",
+      "current": false, 
+      "more": true
+    },
+    {
+      "name": "Help",
+      "current": false, 
+      "more": true
+    }
+  ]
+  
+ul.navigation-list
+    each item in links 
+        li(class=item.current ? 'current' : '')
+            +svg(item.name.toLowerCase())
+            p= item.name
+            if (item.more)
+                .more
+                    +svg('chevron-right')
